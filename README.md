@@ -1,6 +1,6 @@
 # couchdb-shard-utils
 
-![CI](https://github.com/ecraft/couchdb-shard-utils/workflows/ci/badge.svg)
+![CI](https://github.com/ecraft/couchdb-shard-utils/workflows/CI/badge.svg)
 
 
 An utility for working with the shards of a CouchDB database.
