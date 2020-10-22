@@ -37,6 +37,8 @@ class ShardUtils < Thor # rubocop:disable Metrics/ClassLength
       apply_changes(db) do |config|
         config = create_add_node_changes(db, config)
         next if config.nil?
+
+        config
       end
     end
   end
@@ -55,6 +57,8 @@ class ShardUtils < Thor # rubocop:disable Metrics/ClassLength
       apply_changes(db) do |config|
         config = create_remove_node_changes(db, config)
         next if config.nil?
+
+        config
       end
     end
   end
