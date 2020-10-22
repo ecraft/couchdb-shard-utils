@@ -141,3 +141,19 @@ Since the shards are keyed by name, you need to add the new name:
 Then you can remove the old name:
 
 `ruby shard_utils.rb remove couchdb@localhost --couch-url http://user:pass@localhost  --database fieldops_task`
+
+## Developing
+
+Based on the assumption that you will need to copy this script to the node that needs modification and
+run it there, the script is intentionally kept as a single file that does not need anything apart from
+a ruby installation.
+
+This means that the info in Gemfile is duplicated both inline and as a normal Gemfile, this is at least for the moment considered to be an acceptable tradeoff.
+
+
+Run the unittests:
+
+`bundle exec rake spec`
+
+
+
