@@ -114,7 +114,7 @@ class ShardUtils < Thor # rubocop:disable Metrics/ClassLength
 
   private
 
-  attr_accessor :node_name
+  attr_accessor :node_name, :version
 
   DEFAULT_PORT = 5984
   ADMIN_PORT = 5986
@@ -132,13 +132,14 @@ class ShardUtils < Thor # rubocop:disable Metrics/ClassLength
   end
 
   def dbs_url_for(db)
-    "#{couch_url}:#{ADMIN_PORT}/_dbs/#{db}"
+    "#{couch_url}:#{ADMIN_PORT}/_dbs/#{db}" if version.start_with?('2')
+    "#{couch_url}:#{DEFAULT_PORT}/_node/_local/_dbs/#{db}"
   end
 
   def ensure_supported_version
     result = CouchRest.get("#{couch_url}:#{DEFAULT_PORT}/")
-    version = result.fetch('version')
-    raise "Version #{version} not yet supported." unless version.start_with?('2.3')
+    @version = result.fetch('version')
+    raise "Version #{version} not yet supported." unless version.start_with?('2.3') || version.start_with?('3')
   end
 
   def apply_changes(db) # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
