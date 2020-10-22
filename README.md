@@ -9,12 +9,12 @@ Here be dragons, you probably want to know what you are doing. Blindly running t
 The scripts are provided as they might be useful to someone, but we do not take any responsibility for potential data loss.
 You will want to read **and understand**: `https://docs.couchdb.org/en/2.3.1/cluster/sharding.html`
 
-Currently this has been tested against CouchDB 2.3.1, and then it will use the administrative port 5986 that you should not have accessible but from the actual CouchDB machine.
+Currently this has been tested against CouchDB 2.3.1, and then it will use the administrative port 5986 that you should not have accessible but from the actual CouchDB machine. On 3.x it uses the normal port 5984.
 
 The script is a self-contained ruby script.
 
 Limitations:
-- At the moment it supports CouchDB 2.3
+- At the moment it supports CouchDB 2.3 and 3.x
 - Currently this util does not take `n` into consideration in any way.
 - Adding / Removing a node currently is an all or nothing.
 
