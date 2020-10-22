@@ -1,0 +1,30 @@
+name: CI
+
+on: push
+
+jobs:
+
+  ci:
+    strategy:
+      matrix:
+        ruby: [2.7.1]
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: eregon/use-ruby-action@master
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: couchdbshardutils-${{ matrix.image }}-${{ hashFiles('Gemfile.lock') }}
+      - name: Install dependencies
+        run: bundle install --path vendor/bundle
+      - name: Run tests
+        run: bundle exec rake spec
+      - name: Rubocop
+        run: bundle exec rubocop
