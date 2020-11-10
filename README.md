@@ -18,6 +18,17 @@ Limitations:
 - Currently this util does not take `n` into consideration in any way.
 - Adding / Removing a node currently is an all or nothing.
 
+## Run in docker
+
+There's an automated build on docker hub for this utility [here](https://hub.docker.com/r/jeko/couchdb-shard-utils).
+
+To use it:
+
+	docker run -t --rm jeko/couchdb-shard-utils help
+
+It's convenient to run without worrying about ruby versions (or even installing ruby at all, which you might not want to do on your server).
+
+Commands are the same as the ruby file `shard_utils.rb` documented below.
 
 ## Adding a node to a cluster
 
