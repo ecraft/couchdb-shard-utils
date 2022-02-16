@@ -20,11 +20,11 @@ Limitations:
 
 ## Run in docker
 
-There's an automated build on docker hub for this utility [here](https://hub.docker.com/r/jeko/couchdb-shard-utils).
+There's an automated build on docker hub for this utility [here](https://github.com/ecraft/couchdb-shard-utils/pkgs/container/couchdb-shard-utils).
 
 To use it:
 
-	docker run -t --rm jeko/couchdb-shard-utils help
+	docker run -t --rm ghcr.io/ecraft/couchdb-shard-utils:master help
 
 It's convenient to run without worrying about ruby versions (or even installing ruby at all, which you might not want to do on your server).
 
@@ -168,6 +168,3 @@ This means that the info in Gemfile is duplicated both inline and as a normal Ge
 Run the unittests:
 
 `bundle exec rake spec`
-
-
-
