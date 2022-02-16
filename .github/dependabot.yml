@@ -9,7 +9,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  - package-ecosystem: "ruby"
+  - package-ecosystem: "bundler"
     directory: "/"
     schedule:
       interval: "weekly"
