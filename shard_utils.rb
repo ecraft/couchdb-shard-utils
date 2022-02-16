@@ -7,9 +7,9 @@ unless defined?(RSpec)
   gemfile do
     source 'https://rubygems.org'
     gem 'couchrest', '~> 2.0'
-    gem 'thor', '~> 1.0.1'
-    gem 'jsondiff', '~> 0.0.5'
-    gem 'activesupport', '~> 6.0.3'
+    gem 'thor', '~> 1.0'
+    gem 'jsondiff', '~> 0.0'
+    gem 'activesupport', '~> 6.0'
   end
 end
 
