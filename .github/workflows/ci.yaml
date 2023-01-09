@@ -26,7 +26,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
       - name: Cache dependencies
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3.2.3
         with:
           path: vendor/bundle
           key: couchdbshardutils-${{ matrix.image }}-${{ hashFiles('Gemfile.lock') }}
